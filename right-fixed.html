@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta, title, CSS, favicons, etc. -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Off Canvas Right</title>
+
+	<!-- Core CSS -->
+	<link rel="stylesheet" href="assets/css/off-canvas.css">
+</head>
+
+<body class="l-body has-header-fixed off-canvas-right" data-off-canvas-breakpoint="768">
+	<div class="l-surround">
+
+		<!-- Layout header -->
+		<header class="l-header slide-over-transition">
+			<div class="l-header__elements">
+
+				<!-- Branding placeholder -->
+				<div class="logo-placeholder">
+					<div class="logo-placeholder__sun"></div>
+				</div>
+
+				<!-- Show/hide off-canvas button -->
+				<button class="toggle-off-canvas toggle-hamburger" type="button" aria-expanded="false" aria-controls="#offCanvasArea" aria-label="Open Menu">
+					<span class="toggle-hamburger__wrapper">
+						<span class="toggle-hamburger__bun"></span>
+						<span class="toggle-hamburger__bun"></span>
+						<span class="toggle-hamburger__bun"></span>
+					</span>
+				</button>
+
+				<!-- Put elements in l-off-canvas container if you want them off canvas -->
+				<div class="l-off-canvas" id="offCanvasArea" tabindex="-1" aria-labelledby="offCanvasTitle">
+					<div class="l-off-canvas__helper">
+						<h4 id="offCanvasTitle" class="sr-only">Site navigation</h4>
+
+						<!-- Show/hide off-canvas button -->
+						<button class="toggle-off-canvas toggle-hamburger toggle-hamburger--to-x" type="button" aria-expanded="false" aria-controls="#offCanvasArea" aria-label="Close">
+							<span class="toggle-hamburger__wrapper">
+								<span class="toggle-hamburger__bun"></span>
+								<span class="toggle-hamburger__bun"></span>
+								<span class="toggle-hamburger__bun"></span>
+							</span>
+						</button>
+
+						<!-- Navigation -->
+						<nav class="l-nav">
+							<ul class="l-nav__list">
+								<li><a href="left.html">Left</a></li>
+								<li class="current"><a href="right.html">Right</a></li>
+								<li><a href="left-fixed.html">Left Fixed Header</a></li>
+								<li><a href="right-fixed.html">Right Fixed Header</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Dolor</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Layout canvas with off canvas transition -->
+		<div class="l-canvas slide-over-transition">
+			<div class="hero-wrapper">
+				<div class="hero">
+					<h1 class="page-heading">Off Canvas - Right with Fixed Header</h1>
+					<p><strong>Add "off-canvas-right" and "has-header-fixed" classes to body tag</strong></p>
+				</div>
+			</div>
+			<div class="page__content" role="main">
+				<div class="col-wrapper">
+					<div class="col col--8">
+						<div class="skeleton">
+							<div class="skeleton__box" aria-hidden="true"></div>
+						</div>
+					</div>
+					<div class="col col--4">
+						<div class="skeleton" aria-hidden="true">
+							<div class="skeleton__article">
+								<span class="skeleton__paragraph" style="min-width: 60%;"></span>
+								<br>
+								<span class="skeleton__title" style="min-width: 90%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 70%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span> &nbsp;&nbsp;
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span> &nbsp;&nbsp;
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 98%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 92%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 90%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 93%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 40%;"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-wrapper">
+					<div class="col col--4">
+						<div class="skeleton">
+							<div class="skeleton" aria-hidden="true">
+								<div class="skeleton__box"></div>
+							</div>
+							<div class="skeleton__article">
+								<span class="skeleton__paragraph" style="min-width: 60%;"></span>
+								<br>
+								<span class="skeleton__title" style="min-width: 90%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 70%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span> &nbsp;&nbsp;
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span> &nbsp;&nbsp;
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 98%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 92%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 90%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 93%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 40%;"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col col--4">
+						<div class="skeleton">
+							<div class="skeleton">
+								<div class="skeleton__box"></div>
+							</div>
+							<div class="skeleton__article">
+								<span class="skeleton__paragraph" style="min-width: 60%;"></span>
+								<br>
+								<span class="skeleton__title" style="min-width: 90%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 70%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span> &nbsp;&nbsp;
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span> &nbsp;&nbsp;
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 98%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 92%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 90%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 93%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 40%;"></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="col col--4">
+						<div class="skeleton">
+							<div class="skeleton">
+								<div class="skeleton__box"></div>
+							</div>
+							<div class="skeleton__article">
+								<span class="skeleton__paragraph" style="min-width: 60%;"></span>
+								<br>
+								<span class="skeleton__title" style="min-width: 90%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 70%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span> &nbsp;&nbsp;
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span> &nbsp;&nbsp;
+								<span class="skeleton__paragraph" style="min-width: 20%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 98%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 92%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 90%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 93%;"></span>
+								<br>
+								<span class="skeleton__paragraph" style="min-width: 40%;"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="assets/js/off-canvas.js"></script>
+</body>
+
+</html>

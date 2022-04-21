@@ -1,0 +1,13 @@
+@import 'off-canvas/variables';
+@import 'off-canvas/mixins';
+
+@import 'off-canvas/layout';
+@import 'off-canvas/header-fixed';
+
+@import 'off-canvas/ios-workaround';
+
+// Used for demo purposes. Comment out the pieces you don't need
+@import 'off-canvas/starter/base';
+@import 'off-canvas/starter/toggle-button';
+@import 'off-canvas/starter/layout';
+@import 'off-canvas/starter/skeleton';
