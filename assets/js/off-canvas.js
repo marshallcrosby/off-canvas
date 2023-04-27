@@ -1,42 +1,37 @@
-var $document = $(document);
-var $window = $(window);
-
-// Resize delay
-var windowWidth = $window.width();
-$window.resize(function() {
-    var newWindowWidth = $window.width();
-
-    if (windowWidth !== newWindowWidth) {
-        if (this.resizeTO) {
-            clearTimeout(this.resizeTO);
-        }
-        this.resizeTO = setTimeout(function() {
-            $(this).trigger('ocResizeEnd');
-        }, 150);
-    }
-    windowWidth = newWindowWidth;
-});
-
 (function ($) {
     'use strict';
 
     // Global variables
+    var $document = $(document);
+    var $window = $(window);
     var $body = $('body');
     var toggleBtn = $('.toggle-off-canvas');
     var offCanvasElement = $('.l-off-canvas');
     var offCanvasContent = $('.l-header');
-    var offCanvasOverlay = $('.l-off-canvas-overlay');
     var offCanvasCanvas = $('.l-canvas');
     var headerHeight = offCanvasContent.outerHeight();
     var docScrollLoc = 0;
     var currentLoc = 0;
-    var focusIndex = 0;
-    var tabbableCount = 0;
     var focusBeforeOffCanvas;
     var tapping = false;
     var touchStartX;
-    var touchStartY;
     var offCanvasBreakpoint = $body.attr('data-off-canvas-breakpoint');
+
+    // Resize delay
+    var windowWidth = $window.width();
+    $window.on('resize', function() {
+        var newWindowWidth = $window.width();
+
+        if (windowWidth !== newWindowWidth) {
+            if (this.resizeTO) {
+                clearTimeout(this.resizeTO);
+            }
+            this.resizeTO = setTimeout(function() {
+                $(this).trigger('ocResizeEnd');
+            }, 150);
+        }
+        windowWidth = newWindowWidth;
+    });
 
     // Get browser width with or without scrollbar
     var viewport = function() {
@@ -91,14 +86,14 @@ $window.resize(function() {
         var mlnActive = $('.mln__list .active').last();
         
         if (!mlnActive .length) {
-            firstTabbable.focus(); 
+            firstTabbable.trigger('focus'); 
         }
         
         //Escape key press
         offCanvasElement.on('keydown', function(e) {
             var childShowingAmount = $(this).find('.mln__child--transitioning').length;
 
-            if (e.keyCode === 27 && !childShowingAmount) {
+            if (e.key === 'Escape' && !childShowingAmount) {
                 e.preventDefault();
                 toggleOffCanvas('hide');
             }
@@ -107,22 +102,22 @@ $window.resize(function() {
 
         // Redirect last tab to first input
         lastTabbable.on('keydown', function(e) {
-            if (e.which === 9 && !e.shiftKey) {
+            if (e.key === 'Tab' && e.key !== 'Escape') {
                 e.preventDefault();
-                firstTabbable.focus();
+                firstTabbable.trigger('focus');
             }
         });
 
         // Redirect first shift+tab to last input
         firstTabbable.on('keydown', function(e) {
-            if (e.which === 9 && e.shiftKey) {
+            if (e.key === 'Tab' && e.key === 'Escape') {
                 e.preventDefault();
-                lastTabbable.focus();
+                lastTabbable.trigger('focus');
             }
         });
 
         // Focus on the off canvas element
-        offCanvasElement.focus();
+        offCanvasElement.trigger('focus');
     };
 
 
@@ -165,7 +160,7 @@ $window.resize(function() {
             });
 
             // Focus on off canvas button
-            focusBeforeOffCanvas.focus();
+            focusBeforeOffCanvas.trigger('focus');
 
         } else if (!$body.hasClass('js-off-canvas-showing') || action === 'show') { // Open off canvas
             $document.trigger($.Event('show.offCanvas'));
