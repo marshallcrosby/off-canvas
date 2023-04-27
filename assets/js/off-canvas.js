@@ -99,10 +99,9 @@
             }
         });
 
-
         // Redirect last tab to first input
         lastTabbable.on('keydown', function(e) {
-            if (e.key === 'Tab' && e.key !== 'Escape') {
+            if (e.key === 'Tab' && !e.shiftKey) {
                 e.preventDefault();
                 firstTabbable.trigger('focus');
             }
@@ -110,7 +109,7 @@
 
         // Redirect first shift+tab to last input
         firstTabbable.on('keydown', function(e) {
-            if (e.key === 'Tab' && e.key === 'Escape') {
+            if (e.key === 'Tab' && e.shiftKey) {
                 e.preventDefault();
                 lastTabbable.trigger('focus');
             }
