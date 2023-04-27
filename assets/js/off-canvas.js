@@ -139,9 +139,12 @@ $window.resize(function() {
             if (isiOS() && $body.hasClass('has-header-fixed')) {
                 offCanvasCanvas.css('top', '');
 
-                $body.animate({
-                    scrollTop: currentLoc
-                }, 0);
+                $('html, body')
+                    .css('scroll-behavior', 'auto')
+                    .animate({
+                        scrollTop: currentLoc
+                    }, 0)
+                    .css('scroll-behavior', '');
             }
 
             // After off canvas is hidden
