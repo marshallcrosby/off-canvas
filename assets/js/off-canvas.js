@@ -49,15 +49,17 @@
         };
     };
 
-    // Check if is iOS device.
-    var isiOS = function() {
-        if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-            $body.addClass('is-ios');
-            return true;
-        } else {
-            return false;
-        }
-    };
+    function agentHas(keyword) {
+        return navigator.userAgent.toLowerCase().search(keyword.toLowerCase()) > -1;
+    }
+    
+    function isSafari() {
+        return (!!window.ApplePaySetupFeature || !!window.safari) && agentHas('Safari') && !agentHas('Chrome') && !agentHas('CriOS');
+    }
+
+    if (isSafari()) {
+        $body.addClass('is-ios');
+    }
 
     // Trap the keyboard to the off canvas elements when off canvas is showing
     var trapKeyboardToOC = function() {
@@ -130,7 +132,7 @@
             $body.removeClass('js-off-canvas-showing');
 
             // iOS Safari scroll canvas to the original canvas position
-            if (isiOS() && $body.hasClass('has-header-fixed')) {
+            if (isSafari() && $body.hasClass('has-header-fixed')) {
                 offCanvasCanvas.css('top', '');
 
                 $('html, body')
@@ -167,7 +169,7 @@
             offCanvasElement.removeClass('js-l-off-canvas-hide');
 
             // iOS Safari set location of canvas so the user doesn't lose where they are
-            if (isiOS() && $body.hasClass('has-header-fixed')) {
+            if (isSafari() && $body.hasClass('has-header-fixed')) {
                 offCanvasCanvas.css('top', -(docScrollLoc - headerHeight));
             }
 
